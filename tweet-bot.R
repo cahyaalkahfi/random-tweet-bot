@@ -1,5 +1,4 @@
 library(ggplot2)
-library(randomcoloR)
 
 # Jumlah data yang akan dibangkitkan
 n <- 10000
@@ -46,11 +45,21 @@ if (dist == 1) {
 
 my.data <- data.frame(data)
 
+rand.color <- function() {
+  r <- sample(0:255, 1)
+  g <- sample(0:255, 1)
+  b <- sample(0:255, 1)
+  
+  rgb(r, g, b, maxColorValue = 255)
+}
+
 # Membuat histogram dengan warna random
 plot <- ggplot(data=my.data, aes(x=data)) +
-  geom_histogram( color=randomColor(), fill=randomColor(), 
+  geom_histogram( color=rand.color(), fill=rand.color(), 
                   position = 'identity', bins=40, lwd=0.1)
 
+
+plot
 # save to a temp file
 histogram_pic <- tempfile( fileext = ".jpeg")
 ggsave(histogram_pic, plot = plot, device = "jpeg", dpi = 96, width = 8, height = 8, units = "in" )
