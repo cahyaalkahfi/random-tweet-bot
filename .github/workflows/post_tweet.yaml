@@ -20,6 +20,6 @@ jobs:
       - name: Instal paket ggplot2
         run: Rscript -e 'install.packages("ggplot2", dependencies = TRUE)'
       - name: Instal paket randomcoloR
-        run: Rscript -e 'install.packages("randomcoloR", dependencies = TRUE)'
+        run: Rscript -e 'install.packages("randomcoloR")'
       - name: Eksekusi Script R
         run: Rscript tweet-bot.R
