@@ -17,7 +17,7 @@ if (dist == 1) {
   # membangkitkan nilai mean secara acak
   mean <- runif(1, min=0, max=10)
   # membangkitkan nilai std secara acak
-  std <- runif(1, min=1, max=10)
+  std <- runif(1, min=1, max=20)
   
   # membangkitkan 10000 data yang menyebar Normal
   # dengan mean dan std tertentu
